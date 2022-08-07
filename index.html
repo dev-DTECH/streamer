@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Streamer | DTech</title>
+    <style>
+        body {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+        }
+
+        header {
+            padding: 5px;
+            font-size: x-large;
+            background-color: rgba(0, 0, 0);
+            border-radius: 10px;
+        }
+        form{
+            margin: 10px;
+
+        }
+
+        video {
+            border-radius: 10px;
+            width: 90% !important;
+            /* height: auto   !important; */
+        }
+    </style>
+</head>
+<center>
+    <header><b>Streamer</b> - Stream Videos from URL</header><br>
+
+    <video preload="metadata" id="stream" controls src=""></video><br>
+    <form id="input">
+        <input id="url" type="text" placeholder="Paste URL"><input type="submit" value="Stream">
+
+    </form>
+</center>
+
+<body>
+    <script>
+        let input = document.getElementById("input")
+        input.addEventListener("submit", e => {
+            e.preventDefault();
+            let url = document.getElementById("url").value;
+            let video = document.querySelector("#stream")
+            video.src = url
+            video.play()
+            video.style = "width: 90% !important;height: 90% !important;"
+            // console.log(url)
+        })
+
+
+    </script>
+</body>
+
+</html>
